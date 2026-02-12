@@ -2,8 +2,6 @@ NAME: Shiv Bhagat
 
 ## NOTES
 
-Make sure to conver `peer.txt` to `peer.py` and `miner.txt` to `miner.py` before running the code.
-
 The Peer (`peer.py`) acts as a decentralized node that maintains the blockchain state and handles all network communication. It uses UDP for peer-to-peer gossip and chain synchronization, ensuring all nodes reach consensus on the longest valid chain. It also opens a TCP server to listen for local miners, validating their work and broadcasting successful blocks to the rest of the network.
 
 The Miner (`miner.py`) is a standalone worker script that performs the Proof-of-Work (PoW) algorithm. It continuously hashes block candidates with a changing nonce until it finds a hash with 8 leading zeros (the difficulty target). It periodically checks with the Peer to ensure it is mining on the latest block and submits valid blocks back to the Peer via TCP for propagation.
